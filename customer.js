@@ -2,12 +2,7 @@ const { getDb, getNextSequence } = require("./db.js");
 async function get(_) {
   try {
     const db = getDb();
-    // var customerArray = [];
     var customers = await db.collection("customers").find({}).toArray();
-    // while (await customers.hasNext()) {
-    //   //   console.log(await customers.next());
-    //   customerArray.push(await customers.next());
-    // }
     console.log(customers);
     return customers;
   } catch (error) {

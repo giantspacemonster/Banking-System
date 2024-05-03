@@ -5,13 +5,16 @@ const { ApolloServer } = require("apollo-server-express");
 const GraphQLDate = require("./graphql_date.js");
 const about = require("./about.js");
 const customer = require("./customer.js");
+const transfer = require("./transfer.js");
 const resolvers = {
   Query: {
     about: about.getMessage,
     getAllCustomers: customer.get,
+    getAllTransfers: transfer.get,
   },
   Mutation: {
     setAboutMessage: about.setMessage,
+    transferFunds: transfer.funds,
     addCustomer: customer.add,
   },
   GraphQLDate,
