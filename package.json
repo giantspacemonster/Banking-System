@@ -1,0 +1,22 @@
+{
+  "name": "banking-system",
+  "version": "1.0.0",
+  "description": "Basic banking System for The Spark Foundation GRIP2024 Project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e js,graphql -w . -w .env server.js",
+    "lint": "eslint ."
+  },
+  "author": "Aman Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "dotenv": "^16.4.5",
+    "eslint-plugin-import": "^2.29.1",
+    "express": "^4.19.2",
+    "graphql": "^16.8.1",
+    "mongodb": "^6.5.0",
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,22 @@
+scalar GraphQLDate
+type Customer {
+  name: String!
+  email: String!
+  birthdate: GraphQLDate
+  account_balance: Int!
+  account_number: String!
+  created_on: GraphQLDate
+}
+input CustomerInputs {
+  name: String!
+  email: String!
+  birthdate: GraphQLDate
+}
+type Query {
+  about: String!
+  getAllCustomers: [Customer]
+}
+type Mutation {
+  setAboutMessage(message: String!): String
+  addCustomer(customer: CustomerInputs!): Customer
+}
