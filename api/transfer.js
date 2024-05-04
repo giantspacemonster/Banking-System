@@ -19,7 +19,17 @@ async function funds(_, { transferDetails }) {
     const amount = parseFloat(transferDetails.amount).toFixed(2); // remove trailing zeros after decimal point
     newTransfer = Object.assign({}, transferDetails);
     newTransfer.status = "INITIATED";
-    newTransfer.timestamp = new Date();
+    var date = new Date();
+    const timestamp = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")} ${date
+      .getHours()
+      .toString()
+      .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}:${date
+      .getSeconds()
+      .toString()
+      .padStart(2, "0")}`;
+    newTransfer.timestamp = timestamp;
     const saveTransfer = await db
       .collection("transfers")
       .insertOne(newTransfer);
